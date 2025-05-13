@@ -15,6 +15,6 @@ filtered="$(awk -F':' -v pfx="$prefix" 'tolower($1) ~ "^"tolower(pfx) {print $0}
 
 
 # Process each line and extract desired fields
-echo "$filtered" | awk -F':' '{print $1 ":" $4}' > "$output_file"
+echo "$filtered" | awk -F':' '{print $4}' > "$output_file"
 
 echo "Processed output written to: $output_file"
